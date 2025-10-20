@@ -1,0 +1,283 @@
+/* Resetare generala */
+body, h1, h2, h3, p, ul, li, a, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpul fisierului HTML */
+.body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2E2E2E;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Bara de navigare */
+.navigation_bar {
+    background-color: #1f1f1f;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #90EE90;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.nav_left h1 {
+    font-size: 2rem;
+    color: #90EE90;
+}
+
+.nav_center {
+    text-align: center;
+    color: #90EE90;
+}
+
+.nav_center a {
+	color: #140FA3;
+}
+
+.nav_center a:hover {
+	color: #E62213;
+}
+
+.nav_center a:active {
+	color: #A6180E;
+}
+
+.nav_right {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Formularul de conectare/inregistrare */
+.login_form {
+    display: flex;
+    gap: 5px;
+}
+
+.login_form input {
+    padding: 6px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+    color: #fff;
+    font-size: 0.85rem;
+}
+
+.login_form input:-webkit-autofill {
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+    border: 1px solid #555 !important;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 0px 1000px #1f1f1f inset !important;
+    -webkit-text-fill-color: #fff !important;
+}
+
+.login_form button {
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: #90EE90;
+    color: #000;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login_form button:hover {
+    background-color: #e64a19;
+    color: #fff;
+}
+
+.login_form button:active {
+	background-color: #B33A14;
+	color: #fff;
+}
+	
+
+/* Meniul de cautare - completa */
+.search_bar {
+    margin: 20px auto;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.search_bar form {
+    display: flex;
+    gap: 10px;
+}
+
+/* Bara (casuta) de cautare */
+.search_bar input {
+    padding: 8px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+    color: #fff;
+    font-size: 0.85rem;
+}
+
+.search_bar input:-webkit-autofill {
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+    border: 1px solid #555 !important;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 0px 1000px #1f1f1f inset !important;
+    -webkit-text-fill-color: #fff !important;
+}
+
+/* Dropdown pentru genuri */
+.search_form select {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+    color: #90EE90;
+    cursor: pointer;
+}
+
+/* Butonul de cautare */
+.search_bar button {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: #90EE90;
+    color: #000;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search_form button:hover {
+    background-color: #e64a19;
+	color: #fff;
+}
+
+.search_form button:active {
+	background-color: #B33A14;
+	color: #fff;
+}
+
+/* Stilizarea listei de jocuri */
+.game_list {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.game_list h2 {
+    font-size: 1.8rem;
+    color: #90EE90;
+    margin-bottom: 20px;
+}
+
+.game_slider {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.game_item {
+    background-color: #1f1f1f;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 15px;
+    max-width: 250px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.game_item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.game_item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.game_info {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.game_info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+	color: #90EE90;
+}
+
+.game_info p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.game_info a {
+    display: inline-block;
+    background-color: #90EE90;
+    color: #000;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+    margin-top: auto;
+    align-self: center;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.game_info a:hover {
+    background-color: #e64a19;
+	color: #fff;
+}
+
+.game_info a:active {
+    background-color: #B33A14;
+	color: #fff;
+}
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    padding: 15px;
+    text-align: center;
+    color: #90EE90;
+    font-size: 0.9rem;
+    border-top: 2px solid #90EE90;
+    margin-top: 20px;
+}
+
+/* Setari specifice pentru dispozitivele mobile */
+@media (max-width: 768px) {
+    .game_slider {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search_form, .genre_form {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
