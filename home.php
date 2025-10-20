@@ -1,7 +1,7 @@
 <!-- Pagina principala -->
 <?php
 session_start();
-include 'conectare_baza_date.php';
+include 'fisiere_proiect/conectare_baza_date.php';
 
 // Parametrii de filtrare
 $search_term = isset($_GET['search']) ? $_GET['search'] : '';
@@ -53,7 +53,7 @@ $result_jocuri = stmt_get_results($conn, $sql_jocuri, $params, $types);
 <head>
     <meta charset="UTF-8"> 
     <title>Biblioteca de Jocuri.ro</title>
-    <link rel="stylesheet" type="text/css" href="stilizare.css">
+    <link rel="stylesheet" type="text/css" href="fisiere_proiect/stilizare.css">
 </head>
 <body class="body">
 
@@ -69,7 +69,7 @@ $result_jocuri = stmt_get_results($conn, $sql_jocuri, $params, $types);
         <div class="nav_center">
             <?php if (!empty($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
                 <p>Bine ai revenit, <strong><?php echo htmlspecialchars($_SESSION['username'] ?? $_SESSION['email']); ?></strong>!</p>
-                <a href="deconectare.php">Deconectare</a>
+                <a href="fisiere_proiect/deconectare.php">Deconectare</a>
             <?php else: ?>
                 <p>Nu esti logat!</p>
             <?php endif; ?>
@@ -78,7 +78,7 @@ $result_jocuri = stmt_get_results($conn, $sql_jocuri, $params, $types);
         <!-- Dreapta: Logare/Inregistrare -->
         <div class="nav_right">
             <!-- Inregistrare -->
-            <form action="inregistrare.php" method="POST" class="login_form">
+            <form action="fisiere_proiect/inregistrare.php" method="POST" class="login_form">
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="password" name="parola" placeholder="Parola" required>
@@ -86,7 +86,7 @@ $result_jocuri = stmt_get_results($conn, $sql_jocuri, $params, $types);
             </form>
 
             <!-- Logare -->
-            <form action="conectare.php" method="post" class="login_form">
+            <form action="fisiere_proiect/conectare.php" method="post" class="login_form">
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="password" name="password" placeholder="Parola" required>
                 <button type="submit">Conecteaza-te</button>
@@ -125,13 +125,13 @@ $result_jocuri = stmt_get_results($conn, $sql_jocuri, $params, $types);
         if ($result_jocuri->num_rows > 0) {
             while ($row = $result_jocuri->fetch_assoc()) {
                 echo "<div class='game_item'>";
-                $box_art = !empty($row['box_art']) ? htmlspecialchars($row['box_art']) : 'box_art/default_game.jpg';
+                $box_art = !empty($row['box_art']) ? htmlspecialchars($row['box_art']) : 'fisiere_proiect/box_art/default_game.jpg';
                 echo "<img src='" . $box_art . "' alt='" . htmlspecialchars($row['nume_joc']) . "'>";
                 echo "<div class='game_info'>";
                 echo "<h3>" . htmlspecialchars($row['nume_joc']) . " (" . htmlspecialchars($row['an_lansare']) . ")</h3>";
                 echo "<p><b style='color: #e64a19'>Gen</b>: " . htmlspecialchars($row['nume_gen']) . "</p>";
                 echo "<p><b style='color: #e64a19'>Descriere</b>: " . htmlspecialchars($row['descriere']) . "</p><br>";
-                echo "<a href='test.php?id=" . (int)$row['id_joc'] . "'>Detalii</a>";
+                echo "<a href='unfinished.php?id=" . (int)$row['id_joc'] . "'>Detalii</a>";
                 echo "</div></div>";
             }
         } else {

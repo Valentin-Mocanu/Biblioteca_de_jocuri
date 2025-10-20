@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </select><br><br>
 		</label>
 
-        <label>Box Art-ul (box_art/'nume_consola'/'fisier'): <br>
+        <label>Box Art-ul (fisiere_proiect/box_art/'nume_consola'/'fisier'): <br>
             <input type="text" name="box_art"><br><br>
 		</label>
 

@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 						header("Location: adauga_film.php");
 					}else{
 						// Daca esti un utilizator normal, te redirectioneaza la pagina prncipala
-						header("Location: home.php");
+						header("Location: ../home.php");
 					}
 					exit;
 
