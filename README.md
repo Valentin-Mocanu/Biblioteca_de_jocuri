@@ -16,6 +16,7 @@ Biblioteca de Jocuri.ro este o aplicatie web, creata folosind limbajul PHP si co
 
 Mai intai trebuie sa ne cream un server web (in cazul nostru va fi local) pentru aplicatia noastra. Deschidem programul XAMPP (sau un alt program compatibil care are acelasi rol si optiuni disponibile) si pornim Apache si MySQL.
 Apoi vom accesa acest link folosind un browser web (link-ul: http://localhost/phpmyadmin ), iar in meniul de sub bara de cautare de pe pagina respectiva vom apasa pe "Import", introducem fisierul "retro_games_site.sql" si apasam pe butonul "Import". Facem acest lucru pentru a avea acces la baza de date folosita in aplicatia web.
+Dupa trebuie sa introducem fisierul "home.php" si folderul "fisiere_proiect" in urmatoarea locatie: C:\xampp\htdocs (bineinteles, depinde de programul sau modul in care il folositi, poate varia aceasta metoda, alaturi de crearea serverului web).
 Intr-un final, in bara de cautare a browserului, vom introduce urmatorul link, care ne va conduce la pagina principala a aplicatiei mele web (link-ul: http://localhost/home.php ).
 
 
