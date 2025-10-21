@@ -1,6 +1,6 @@
 # Biblioteca de Jocuri.ro
 
-Biblioteca de Jocuri.ro este o aplicatie web, creata folosind limbajul PHP si comunicand cu o baza de date MySQL. Aceasta aplicatie web are scopul de a le oferi utilizatorilor un mod simplu, sigur si placut de a gasi o gama larga de jocuri video retro, sub forma unei biblioteci online, care au fost create si iubite pe platformele lor nostalgice, in perioada lor de gratie. 
+Biblioteca de Jocuri.ro este o aplicatie web, creata folosind limbajul PHP si care comunica cu o baza de date MySQL. Aceasta aplicatie web are scopul de a le oferi utilizatorilor un mod simplu, sigur si placut de a gasi o gama larga de jocuri video retro, sub forma unei biblioteci online, care au fost create si iubite pe platformele lor nostalgice, in perioada lor de gratie. 
 
 ## Limbaje/Tehnologii folosite:
 
