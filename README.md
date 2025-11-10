@@ -26,3 +26,9 @@ Intr-un final, in bara de cautare a browserului, vom introduce urmatorul link, c
 - Crearea si gestionarea unei baze de date folosind instructiuni SQL in consola sau folosind PHPMyAdmin ca instrument web;
 - Integrarea interactiunii utilizator-aplicatie, prin formulare, autentificare/inregistrare si afisare dinamica a continutului;
 - Intelegerea fluxului client-server si modul in care serverul web (Apache) proceseaza cererile si comunica cu baza de date;
+
+## Planuri de imbunatatire a proiectului pe viitor:
+
+- Adaugarea unei modalitati de evaluare a jocurilor de catre utilizatori;
+- Adaugarea unei modalitati de a permite utilizatorilor sa isi creeze o lista de jocuri favorite;
+- Finalizarea tabului "Detalii", unde va redirectiona utilizatorul catre o pagina de documentare extinsa si mult mai detaliata a jocului respectiv;

@@ -102,14 +102,20 @@ $result_jocuri = stmt_get_results($conn, $sql_jocuri, $params, $types);
 
         <select name="gen">
             <option value="">Selecteaza un gen</option>
-            <?php
-            if ($result_genuri && $result_genuri->num_rows > 0) {
-                while ($row_gen = $result_genuri->fetch_assoc()) {
-                    $selected = ($selected_gen == $row_gen['id_gen']) ? 'selected' : '';
-                    echo "<option value='" . (int)$row_gen['id_gen'] . "' $selected>" . htmlspecialchars($row_gen['nume_gen']) . "</option>";
+                <?php
+                if ($result_genuri && $result_genuri->num_rows > 0) {
+                    while ($row_gen = $result_genuri->fetch_assoc()) {
+                        $id_gen = (int)$row_gen['id_gen'];
+                        $nume_gen = htmlspecialchars($row_gen['nume_gen']);
+                        $selected = ($selected_gen == $id_gen) ? 'selected' : '';
+
+                        echo <<<HTML
+                                    <option value="{$id_gen}" {$selected}>{$nume_gen}</option>
+
+                        HTML;
+                    }
                 }
-            }
-            ?>
+                ?>
         </select>
 
         <button type="submit">Cauta</button>
@@ -124,15 +130,28 @@ $result_jocuri = stmt_get_results($conn, $sql_jocuri, $params, $types);
         <?php
         if ($result_jocuri->num_rows > 0) {
             while ($row = $result_jocuri->fetch_assoc()) {
-                echo "<div class='game_item'>";
-                $box_art = !empty($row['box_art']) ? htmlspecialchars($row['box_art']) : 'fisiere_proiect/box_art/default_game.jpg';
-                echo "<img src='" . $box_art . "' alt='" . htmlspecialchars($row['nume_joc']) . "'>";
-                echo "<div class='game_info'>";
-                echo "<h3>" . htmlspecialchars($row['nume_joc']) . " (" . htmlspecialchars($row['an_lansare']) . ")</h3>";
-                echo "<p><b style='color: #e64a19'>Gen</b>: " . htmlspecialchars($row['nume_gen']) . "</p>";
-                echo "<p><b style='color: #e64a19'>Descriere</b>: " . htmlspecialchars($row['descriere']) . "</p><br>";
-                echo "<a href='unfinished.php?id=" . (int)$row['id_joc'] . "'>Detalii</a>";
-                echo "</div></div>";
+                $box_art = !empty($row['box_art'])
+                    ? htmlspecialchars($row['box_art'])
+                    : 'fisiere_proiect/box_art/default_game.jpg';
+
+                $nume_joc = htmlspecialchars($row['nume_joc']);
+                $an_lansare = htmlspecialchars($row['an_lansare']);
+                $nume_gen = htmlspecialchars($row['nume_gen']);
+                $descriere = htmlspecialchars($row['descriere']);
+                $id_joc = (int)$row['id_joc'];
+
+                echo <<<HTML
+                    <div class="game_item">
+                        <img src="{$box_art}" alt="{$nume_joc}">
+                        <div class="game_info">
+                            <h3>{$nume_joc} ({$an_lansare})</h3>
+                            <p><b style="color: #e64a19">Gen</b>: {$nume_gen}</p>
+                            <p><b style="color: #e64a19">Descriere</b>: {$descriere}</p><br>
+                            <a href="unfinished.php?id={$id_joc}">Detalii</a>
+                        </div>
+                    </div>
+
+                HTML;
             }
         } else {
             echo "<p>Nu exista jocuri care corespund criteriilor de cautare!</p>";
